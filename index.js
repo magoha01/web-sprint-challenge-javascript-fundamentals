@@ -30,15 +30,11 @@ Study the code below and explain in your own words why nested function can acces
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
 function summation(num) {
-  let numArray = [];
-
-    for (let i = 0; i > 0; i--){
-    numArray.push(i)
+  let sumNum = 0;
+    for (let i = num; i > 0; i--){
+      sumNum += i
     }
-    const cumSum = numArray.reduce(function(acc,item){
-      return acc + item;
-    },0);
-    return cumSum;
+    return sumNum;
   }
  
   console.log(summation(4))
@@ -208,8 +204,8 @@ const cuboid = new CuboidMaker({length: 4, width:5, height: 5})
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-console.log(cuboid.volume()); // 100
-console.log(cuboid.surfaceArea()); // 130
+// console.log(cuboid.volume()); // 100
+// console.log(cuboid.surfaceArea()); // 130
  
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
@@ -231,8 +227,8 @@ constructor({length, width, height}){
 const cuboidTwo = new CuboidMakerTwo ({length: 4, width:5, height: 5})
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
-console.log(cuboidTwo.volume()); // 100
-console.log(cuboidTwo.surfaceArea()); // 130
+// console.log(cuboidTwo.volume()); // 100
+// console.log(cuboidTwo.surfaceArea()); // 130
 
 
 
