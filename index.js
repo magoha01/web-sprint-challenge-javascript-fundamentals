@@ -29,12 +29,19 @@ Study the code below and explain in your own words why nested function can acces
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*number*/) {
+function summation(num) {
+  let numArray = [];
 
-    // for (let i = 0; if i < 0;)
-
+    for (let i = 0; i > 0; i--){
+    numArray.push(i)
+    }
+    const cumSum = numArray.reduce(function(acc,item){
+      return acc + item;
+    },0);
+    return cumSum;
   }
  
+  console.log(summation(4))
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -191,15 +198,13 @@ function CuboidMaker({length, width, height}){
     return 2 * (this.length * this.width + this.length * this.height + this.width * this.height)
   }
 
-
-
 /* 🐴🐴🐴 Step 4: Create a new object that uses CuboidMaker 🐴🐴🐴
   Create an object called cuboid that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
 
 const cuboid = new CuboidMaker({length: 4, width:5, height: 5})
-console.log(cuboid)
+
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
@@ -210,13 +215,24 @@ console.log(cuboid.surfaceArea()); // 130
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
 class CuboidMakerTwo{
-
+constructor({length, width, height}){
+    this.length = length;
+    this.width = width;
+    this.height = height;
+  }
+  volume (){
+    return (this.length * this.width * this.height);
+  }
+  surfaceArea(){
+    return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
+  }
 }
 
+const cuboidTwo = new CuboidMakerTwo ({length: 4, width:5, height: 5})
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
-// console.log(cuboidTwo.volume()); // 100
-// console.log(cuboidTwo.surfaceArea()); // 130
+console.log(cuboidTwo.volume()); // 100
+console.log(cuboidTwo.surfaceArea()); // 130
 
 
 
