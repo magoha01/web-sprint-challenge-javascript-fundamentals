@@ -18,7 +18,7 @@ Study the code below and explain in your own words why nested function can acces
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-//The nested function is able to reach the variable external because it is still within the scope of the function, as they are 
+//The nested function is able to reach the external variable thanks to closure. If the nested function doesn't possess within itself the value it needs, it has the ability to look in the outer function surrounding it for that value, which in this case is that of myFunction().
 
 
 
@@ -36,8 +36,6 @@ function summation(num) {
     }
     return sumNum;
   }
- 
-  console.log(summation(4))
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
